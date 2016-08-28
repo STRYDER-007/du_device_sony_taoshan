@@ -141,8 +141,8 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">96</integer>
+         config to 7. 
+    <integer name="config_deviceHardwareKeys">96</integer> -->
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -271,6 +271,6 @@
     <string translatable="false" name="config_radio_access_family">GSM|WCDMA</string>
 
     <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
-         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
-    <bool name="config_useSystemClockforRotationSensor">true</bool>
+         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. 
+    <bool name="config_useSystemClockforRotationSensor">true</bool> -->
 </resources>
