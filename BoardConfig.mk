@@ -29,3 +29,7 @@ include $(DEVICE_PATH)/board/*.mk
 
 # Board kernel headers
 PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/taoshan/kernel-headers
+
+# Kernel Toolchain
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
