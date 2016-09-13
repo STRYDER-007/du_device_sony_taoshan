@@ -16,7 +16,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel \
 		$(INSTALLED_RAMDISK_TARGET) \
 		$(INITSONY) \
 		$(PREBUILT_TOYBOX) \
-	        $(PRODUCT_OUT)/utilities/keycheck \
+		$(PRODUCT_OUT)/utilities/keycheck \
 		$(MKBOOTIMG) $(MINIGZIP) \
 		$(INTERNAL_BOOTIMAGE_FILES)
 
