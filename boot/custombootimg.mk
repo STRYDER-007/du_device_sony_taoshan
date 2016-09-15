@@ -4,13 +4,12 @@ uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
-DEVICE_BOOTDIR := device/sony/taoshan/boot/
-PREBUILT_RAMDISK := device/sony/taoshan/recovery/ramdisk-recovery.cpio
+DEVICE_BOOTDIR := device/sony/taoshan/boot
 PREBUILT_TOYBOX := device/sony/taoshan/recovery/toybox
 INITSONY := $(PRODUCT_OUT)/utilities/init_sony
 
 INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
-$(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(uncompressed_ramdisk) $(PREBUILT_RAMDISK) $(INSTALLED_RAMDISK_TARGET) $(INITSONY) $(PREBUILT_TOYBOX) $(PRODUCT_OUT)/utilities/keycheck $(MKBOOTIMG) $(MINIGZIP) $(INTERNAL_BOOTIMAGE_FILES)
+$(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(uncompressed_ramdisk) $(recovery_uncompressed_ramdisk) $(INSTALLED_RAMDISK_TARGET) $(INITSONY) $(PREBUILT_TOYBOX) $(PRODUCT_OUT)/utilities/keycheck $(MKBOOTIMG) $(MINIGZIP) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Boot image: $@")
 
 	$(hide) rm -fr $(PRODUCT_OUT)/combinedroot
@@ -18,7 +17,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(uncompressed_ramdisk) $(P
 	$(hide) mkdir -p $(PRODUCT_OUT)/combinedroot/sbin
 
 	$(hide) cp $(DEVICE_BOOTDIR)/logo.rle $(PRODUCT_OUT)/combinedroot/logo.rle
-	$(hide) cp $(PREBUILT_RAMDISK) $(PRODUCT_OUT)/combinedroot/sbin/
+	$(hide) cp $(recovery_uncompressed_ramdisk) $(PRODUCT_OUT)/combinedroot/sbin/
 	$(hide) cp $(PRODUCT_OUT)/utilities/keycheck $(PRODUCT_OUT)/combinedroot/sbin/
 	$(hide) cp $(PREBUILT_TOYBOX) $(PRODUCT_OUT)/combinedroot/sbin/toybox_init
 
