@@ -4,7 +4,7 @@ uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
-DEVICE_BOOTDIR := device/sony/taoshan/boot
+DEVICE_BOOTDIR := device/sony/taoshan/boot/
 PREBUILT_TOYBOX := device/sony/taoshan/recovery/toybox
 INITSONY := $(PRODUCT_OUT)/utilities/init_sony
 
