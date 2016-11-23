@@ -15,10 +15,10 @@
 #
 
 # Enhanced NFC
-$(call inherit-product, vendor/aicp/configs/nfc_enhanced.mk)
+$(call inherit-product, vendor/du/config/nfc_enhanced.mk)
 
-# Inherit common AICP stuff
-$(call inherit-product, vendor/aicp/configs/common.mk)
+# Inherit common AOSP stuff
+$(call inherit-product, vendor/du/config/common.mk)
 
 # Inherit device configurations
 $(call inherit-product, device/sony/taoshan/device.mk)
@@ -29,7 +29,7 @@ TARGET_SCREEN_WIDTH := 480
 
 # Device identifications
 PRODUCT_DEVICE := taoshan
-PRODUCT_NAME := aicp_taoshan
+PRODUCT_NAME := du_taoshan
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_MODEL := Xperia L
