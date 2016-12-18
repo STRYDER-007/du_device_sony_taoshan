@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_taoshan-eng
-add_lunch_combo aosp_taoshan-userdebug
+add_lunch_combo aicp_taoshan-eng
+add_lunch_combo aicp_taoshan-userdebug
